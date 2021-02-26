@@ -77,7 +77,27 @@
 			@include panel-colors;
 		}
 
-		> .intro {
+		> .intro_org {
+			@include padding($pad, $pad);
+			@include vendor('display', 'flex');
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			@include vendor('justify-content', 'center');
+			@include vendor('align-items', 'flex-start');
+			@include vendor('flex-direction', 'column');
+			width: 22rem;
+
+			&.joined {
+				width: (22rem - $pad);
+				padding-right: 0;
+
+				& + .inner {
+					padding-left: ($pad * 0.75);
+				}
+			}
+		}
+
+        > .intro {
 			@include padding($pad, $pad);
 			@include vendor('display', 'flex');
 			@include vendor('flex-grow', '0');
@@ -88,7 +108,7 @@
 			width: 100;
 
 			&.joined {
-				width: (22rem - $pad);
+				width: (100 - $pad);
 				padding-right: 0;
 
 				& + .inner {
